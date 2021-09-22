@@ -23,6 +23,11 @@ jobs:
           server-id: github
           settings-path: ${{ github.workspace }}
 
+      - name: Install gpg secret key
+        run: |
+          cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
+          gpg --list-secret-keys --keyid-format LONG
+
       - name: Build & Deploy with Maven
         run: mvn -B install --file pom.xml deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
