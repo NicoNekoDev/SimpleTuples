@@ -14,6 +14,14 @@ jobs:
           java-version: '8'
           check-latest: true
 
+      - name: Cache local Maven repository
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.m2/repository
+            ~/.gnupg
+          key: maven-${{ hashFiles('**/pom.xml') }}
+
       - name: Install gpg secret key
         run: |
           cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
