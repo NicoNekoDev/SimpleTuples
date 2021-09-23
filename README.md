@@ -1,3 +1,3 @@
 # SimpleTuples
 
-A library for simple tuples in Java 8!
+A simple library for tuples in Java 8!
