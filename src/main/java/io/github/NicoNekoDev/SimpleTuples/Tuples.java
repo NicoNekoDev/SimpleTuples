@@ -1,4 +1,4 @@
-package org.github.NicoNekoDev.simpletuples;
+package io.github.NicoNekoDev.SimpleTuples;
 
 /**
  * Constructor for tuple types.

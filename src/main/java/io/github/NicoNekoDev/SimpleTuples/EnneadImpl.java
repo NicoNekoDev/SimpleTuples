@@ -1,4 +1,4 @@
-package org.github.NicoNekoDev.simpletuples;
+package io.github.NicoNekoDev.SimpleTuples;
 
 import java.util.Objects;
 

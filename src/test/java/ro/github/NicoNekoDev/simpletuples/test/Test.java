@@ -1,5 +1,6 @@
 package ro.github.NicoNekoDev.simpletuples.test;
 
+import io.github.NicoNekoDev.SimpleTuples.*;
 import org.github.NicoNekoDev.simpletuples.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
