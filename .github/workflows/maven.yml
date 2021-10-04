@@ -13,6 +13,8 @@ jobs:
           distribution: 'adopt'
           java-version: '8'
           check-latest: true
+          server-id: github
+          settings-path: ${{ github.workspace }}
 
       - name: Cache local Maven repository
         uses: actions/cache@v2
