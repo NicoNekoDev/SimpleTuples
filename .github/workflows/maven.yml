@@ -21,7 +21,6 @@ jobs:
         with:
           path: |
             ~/.m2/repository
-            ~/.gnupg
           key: maven-${{ hashFiles('**/pom.xml') }}
 
       - name: Install gpg secret key
