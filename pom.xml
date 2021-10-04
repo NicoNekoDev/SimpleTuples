@@ -24,8 +24,28 @@
         </repository>
     </distributionManagement>
 
-    <scm>
+    <licenses>
+        <license>
+            <name>The Unlicense</name>
+            <url>https://unlicense.org</url>
+        </license>
+    </licenses>
 
+    <developers>
+        <developer>
+            <id>NicoNekoDev</id>
+            <name>Drăghiciu Nicolae</name>
+            <email>nicuch100@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/NicoNekoDev/SimpleTuples.git</connection>
+        <developerConnection>scm:git:ssh://github.com:NicoNekoDev/SimpleTuples.git</developerConnection>
+        <url>https://github.com/NicoNekoDev/SimpleTuples/tree/main</url>
     </scm>
 
     <dependencies>

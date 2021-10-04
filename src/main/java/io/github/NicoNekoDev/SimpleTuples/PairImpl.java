@@ -10,7 +10,7 @@ class PairImpl<T1, T2> extends UnitImpl<T1> {
         this.value2 = value2;
     }
 
-    public final T2 getSecondValue() {
+    public T2 getSecondValue() {
         return this.value2;
     }
 

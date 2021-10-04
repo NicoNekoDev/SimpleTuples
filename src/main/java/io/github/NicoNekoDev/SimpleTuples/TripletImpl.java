@@ -10,7 +10,7 @@ class TripletImpl<T1, T2, T3> extends PairImpl<T1, T2> {
         this.value3 = value3;
     }
 
-    public final T3 getThirdValue() {
+    public T3 getThirdValue() {
         return this.value3;
     }
 

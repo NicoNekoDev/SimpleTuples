@@ -10,7 +10,7 @@ class DecadeImpl<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> extends EnneadImpl<T1,
         this.value10 = value10;
     }
 
-    public final T10 getTenthValue() {
+    public T10 getTenthValue() {
         return this.value10;
     }
 

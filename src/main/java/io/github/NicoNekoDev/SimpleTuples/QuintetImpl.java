@@ -10,7 +10,7 @@ class QuintetImpl<T1, T2, T3, T4, T5> extends QuartetImpl<T1, T2, T3, T4> {
         this.value5 = value5;
     }
 
-    public final T5 getFifthValue() {
+    public T5 getFifthValue() {
         return this.value5;
     }
 

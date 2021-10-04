@@ -9,7 +9,7 @@ class UnitImpl<T1> {
         this.value1 = value1;
     }
 
-    public final T1 getFirstValue() {
+    public T1 getFirstValue() {
         return this.value1;
     }
 

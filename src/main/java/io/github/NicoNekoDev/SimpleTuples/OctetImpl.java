@@ -10,7 +10,7 @@ public class OctetImpl<T1, T2, T3, T4, T5, T6, T7, T8> extends SeptetImpl<T1, T2
         this.value8 = value8;
     }
 
-    public final T8 getEightValue() {
+    public T8 getEightValue() {
         return this.value8;
     }
 

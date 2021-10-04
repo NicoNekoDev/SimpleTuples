@@ -10,7 +10,7 @@ class EnneadImpl<T1, T2, T3, T4, T5, T6, T7, T8, T9> extends OctetImpl<T1, T2, T
         this.value9 = value9;
     }
 
-    public final T9 getNinthValue() {
+    public T9 getNinthValue() {
         return this.value9;
     }
 

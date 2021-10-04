@@ -1,9 +1,15 @@
 package io.github.NicoNekoDev.SimpleTuples;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-public class Unit<T1> extends UnitImpl<T1> {
+public class Unit<T1> extends UnitImpl<T1> implements Serializable {
 
     public Unit(T1 value1) {
         super(value1);
@@ -19,6 +25,14 @@ public class Unit<T1> extends UnitImpl<T1> {
 
     public final List<Object> toRawList() {
         return Arrays.asList(this.toRawArray());
+    }
+
+    public final <R> R apply(Function<? super T1, ? extends R> func) {
+        return func.apply(super.value1);
+    }
+
+    public final void accept(Consumer<? super T1> cons) {
+        cons.accept(super.value1);
     }
 
     // Unit getter
@@ -57,5 +71,16 @@ public class Unit<T1> extends UnitImpl<T1> {
 
     public final <T2, T3, T4, T5, T6, T7, T8, T9, T10> Decade<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10> toDecade(T2 value2, T3 value3, T4 value4, T5 value5, T6 value6, T7 value7, T8 value8, T9 value9, T10 value10) {
         return new Decade<>(super.value1, value2, value3, value4, value5, value6, value7, value8, value9, value10);
+    }
+
+    @Override
+    public final String toString() {
+        return String.format(
+                "<%s>",
+                Stream.of(this.toRawArray())
+                        .filter(Objects::nonNull)
+                        .map(Object::toString)
+                        .collect(Collectors.joining(", "))
+        );
     }
 }

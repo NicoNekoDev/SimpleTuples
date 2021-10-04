@@ -10,7 +10,7 @@ class QuartetImpl<T1, T2, T3, T4> extends TripletImpl<T1, T2, T3> {
         this.value4 = value4;
     }
 
-    public final T4 getForthValue() {
+    public T4 getForthValue() {
         return this.value4;
     }
 

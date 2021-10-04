@@ -10,7 +10,7 @@ class SextetImpl<T1, T2, T3, T4, T5, T6> extends QuintetImpl<T1, T2, T3, T4, T5>
         this.value6 = value6;
     }
 
-    public final T6 getSixthValue() {
+    public T6 getSixthValue() {
         return this.value6;
     }
 
