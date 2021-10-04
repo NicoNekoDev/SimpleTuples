@@ -26,8 +26,7 @@ jobs:
       - name: Cache local Maven repository
         uses: actions/cache@v2
         with:
-          path: |
-            ~/.m2/repository
+          path: ~/.m2/repository
           key: maven-${{ hashFiles('**/pom.xml') }}
 
       - name: Install gpg secret key
