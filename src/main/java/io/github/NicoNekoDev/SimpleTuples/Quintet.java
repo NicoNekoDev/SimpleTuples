@@ -75,7 +75,7 @@ public class Quintet<T1, T2, T3, T4, T5> extends QuintetImpl<T1, T2, T3, T4, T5>
     }
 
     @Override
-    public final String toString() {
+    public String toString() {
         return String.format(
                 "<%s>",
                 Stream.of(this.toRawArray())

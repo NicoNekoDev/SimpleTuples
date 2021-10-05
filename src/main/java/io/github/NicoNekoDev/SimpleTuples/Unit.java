@@ -74,7 +74,7 @@ public class Unit<T1> extends UnitImpl<T1> implements Serializable {
     }
 
     @Override
-    public final String toString() {
+    public String toString() {
         return String.format(
                 "<%s>",
                 Stream.of(this.toRawArray())
