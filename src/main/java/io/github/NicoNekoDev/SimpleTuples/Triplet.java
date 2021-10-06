@@ -75,7 +75,7 @@ public class Triplet<T1, T2, T3> extends TripletImpl<T1, T2, T3> implements Seri
     }
 
     @Override
-    public final String toString() {
+    public String toString() {
         return String.format(
                 "<%s>",
                 Stream.of(this.toRawArray())

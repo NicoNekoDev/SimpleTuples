@@ -75,7 +75,7 @@ public class Septet<T1, T2, T3, T4, T5, T6, T7> extends SeptetImpl<T1, T2, T3, T
     }
 
     @Override
-    public final String toString() {
+    public String toString() {
         return String.format(
                 "<%s>",
                 Stream.of(this.toRawArray())

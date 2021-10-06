@@ -75,7 +75,7 @@ public class Pair<T1, T2> extends PairImpl<T1, T2> implements Serializable {
     }
 
     @Override
-    public final String toString() {
+    public String toString() {
         return String.format(
                 "<%s>",
                 Stream.of(this.toRawArray())
