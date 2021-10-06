@@ -3,7 +3,7 @@ package ro.github.NicoNekoDev.simpletuples.test;
 import io.github.NicoNekoDev.SimpleTuples.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestTuples {
 
@@ -76,18 +76,30 @@ public class TestTuples {
     public void testConsumers() {
         Unit<Product> unit = Unit.of(new Product(0));
         unit.accept((product) -> product.setPrice(1));
-        assertEquals(1, unit.getFirstValue().getPrice());
+        assertEquals(1, unit.apply(Product::getPrice));
 
         Pair<Product, Integer> pair = unit.toPair(2);
         pair.accept((product, price1) -> product.setPrice(price1));
-        assertEquals(2, pair.getFirstValue().getPrice());
+        assertEquals(2, (int) pair.apply((product, price) -> product.getPrice()));
 
         Triplet<Product, Integer, Integer> triplet = pair.toTriplet(1);
         triplet.accept((product, price1, price2) -> product.setPrice(price1 + price2));
-        assertEquals(3, triplet.getFirstValue().getPrice());
+        assertEquals(3, (int) triplet.apply((product, price1, price2) -> product.getPrice()));
 
         Quartet<Product, Integer, Integer, Integer> quartet = triplet.toQuartet(1);
         quartet.accept((product, price1, price2, price3) -> product.setPrice(price1 + price2 + price3));
-        assertEquals(4, quartet.getFirstValue().getPrice());
+        assertEquals(4, (int) quartet.apply((product, price1, price2, price3) -> product.getPrice()));
+    }
+
+    @Test
+    public void testOptionals() {
+        OptionalPair<Integer, Integer> optionalPair = OptionalPair.ofNullable(1, 2);
+        assertTrue(optionalPair.getFirstValue().isPresent());
+        assertTrue(optionalPair.getSecondValue().isPresent());
+
+        OptionalTriplet<Integer, Integer, Integer> optionalTriplet = OptionalTriplet.ofNullable(null, 2, null);
+        assertFalse(optionalTriplet.getFirstValue().isPresent());
+        assertTrue(optionalTriplet.getSecondValue().isPresent());
+        assertFalse(optionalTriplet.getThirdValue().isPresent());
     }
 }
