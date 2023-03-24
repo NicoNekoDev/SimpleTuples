@@ -2,6 +2,26 @@
 
 > A simple library for tuples in Java 8!
 
+### Maven
+##### Repository
+```markdown
+<repository>
+  <id>repsy</id>
+  <url>https://repo.repsy.io/mvn/niconeko/release</url>
+</repository>
+```
+
+##### Dependency
+```markdown
+<dependencies>
+  <dependency>
+    <groupId>io.github.niconekodev</groupId>
+    <artifactId>simpletuples</artifactId>
+    <version>1.0.1</version>
+  </dependency>
+</dependencies>
+```
+
 ### Usage
 There are multiple ways to use this library, some of which are:
 ##### Tuples builder
