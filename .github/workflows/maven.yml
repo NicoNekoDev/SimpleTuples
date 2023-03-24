@@ -29,6 +29,7 @@ jobs:
           passphrase: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
 
       - name: Build and Deploy with Maven
-        run: mvn --batch-mode clean deploy -s $GITHUB_WORKSPACE/settings.xml -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+        run: mvn --batch-mode clean deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
-          REPSY_PASS: ${{ secrets.REPSY_PASS}}
+          GPG_PASS: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+          REPSY_PASS: ${{ secrets.REPSY_PASS }}
