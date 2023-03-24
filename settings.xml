@@ -50,6 +50,11 @@
             <password>${env.REPSY_PASS}</password>
         </server>
         <server>
+            <id>repsy-release</id>
+            <username>niconeko</username>
+            <password>${env.REPSY_PASS}</password>
+        </server>
+        <server>
             <id>gpg.passphrase</id>
             <passphrase>${env.GPG_PASS}</passphrase>
         </server>
