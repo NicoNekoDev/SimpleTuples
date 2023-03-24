@@ -24,11 +24,11 @@ jobs:
 
       - name: Install gpg secret key
         run: |
-          cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
+          cat <(echo -e "${{ secrets.GPG_SECRET_KEY }}") | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
 
       - name: Build and Deploy with Maven
         run: mvn --batch-mode deploy -s $GITHUB_WORKSPACE/settings.xml
         env:
-          GPG_PASSPHRASE: ${{ secrets.GPG_SECRET_KEY_PASSWORD }}
+          GPG_PASSP: ${{ secrets.GPG_SECRET_KEY_PASSWORD }}
           REPSY_PASS: ${{ secrets.REPSY_PASS}}
